@@ -20,18 +20,14 @@ import com.projetoAPI_REST.personApiC.dto.resquest.PersonDTO;
 import com.projetoAPI_REST.personApiC.exception.PersonNotFoundException;
 import com.projetoAPI_REST.personApiC.service.PersonService;
 
+import lombok.AllArgsConstructor;
+
 @RestController
 @RequestMapping("/api/v1/people")
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonController {
 	
 	private PersonService personService;
-	
-	
-	@Autowired
-	public PersonController(PersonService personService) {
-		super();
-		this.personService = personService;
-	}
 
 	@PostMapping
 	@ResponseStatus(value = HttpStatus.CREATED)

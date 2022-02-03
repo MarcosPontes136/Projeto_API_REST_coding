@@ -11,6 +11,4 @@ import com.projetoAPI_REST.personApiC.entity.Person;
 @Component
 @EnableJpaRepositories
 public interface PersonRepository extends JpaRepository<Person, Long> {
-
-	
 }

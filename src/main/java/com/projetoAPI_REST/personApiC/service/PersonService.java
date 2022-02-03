@@ -13,19 +13,17 @@ import com.projetoAPI_REST.personApiC.entity.Person;
 import com.projetoAPI_REST.personApiC.exception.PersonNotFoundException;
 import com.projetoAPI_REST.personApiC.repository.PersonRepository;
 
+import lombok.AllArgsConstructor;
+
 
 
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonService {
 
 	private PersonRepository personRepository;	
 	
 	private final  PersonMapper personMapper = PersonMapper.INSTANCE;	
-
-	@Autowired
-	public PersonService(PersonRepository personRepository) {
-		this.personRepository = personRepository;
-	}
 
 	public MessageResponseDTO createPerson(PersonDTO personDTO) {
 
